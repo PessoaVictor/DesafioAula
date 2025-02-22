@@ -70,6 +70,9 @@
     border-radius: 7px;
     color: white;
 }
+.card button:hover{
+    cursor: pointer;
+}
 
 .card button:hover{
     background-color: rgb(13, 245, 13);
