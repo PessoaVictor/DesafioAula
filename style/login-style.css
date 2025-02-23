@@ -93,10 +93,14 @@ body{
     padding: 6px 18px;
     border: none;
     border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.login-frame-container a{
     font-size: 14px;
     color: var(--white);
     font-weight: 600;
-    margin-bottom: 18px;
+    text-decoration: none;
 }
 
 .login-frame-container h5{
