@@ -17,29 +17,25 @@
     color: white;
 }
 #produtosEmAlta{
-    /*background-color: red;*/
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
     align-items: center;
     justify-content: center;
-    /*overflow: auto;*/
+    
 }
 #produtosEmAlta h1{
     display: block;
     text-align: center;
 }
 #produtosNormais{
-    /*background-color: blueviolet;*/
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
     align-items: center;
     justify-content: center;
-    /*overflow: auto;*/
 }
 .card{
-    /*background-color: rgb(53, 175, 28);*/
     background-color: rgb(255, 255, 255);
     text-align: center;
     margin: 20px;
@@ -70,12 +66,10 @@
     border-radius: 7px;
     color: white;
 }
-.card button:hover{
-    cursor: pointer;
-}
 
 .card button:hover{
     background-color: rgb(13, 245, 13);
+    cursor: pointer;
 }
 #links{
     background-color: #FDE2B7;

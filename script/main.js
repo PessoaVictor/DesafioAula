@@ -1,3 +1,4 @@
+
 //produtos inicio
 let produtosEmAlta = document.querySelector("#produtosEmAlta");
 let produtosNormal = document.querySelector("#produtosNormais");
@@ -55,3 +56,5 @@ produtosbtn.forEach(produto => {
     });
 });
 //produtos fim
+
+alert('Ola mundo');
