@@ -3,12 +3,6 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
 
                                                                                 /* OPCAO CARRINHO */
 .opcoes-compra {
@@ -49,7 +43,7 @@ html, body {
     background-color: #45a049;
 }
 
-.input-cupom {
+.input-cupom,.input-cep {
     padding: 10px;
     width: 80%;
     max-width: 250px;
@@ -58,13 +52,18 @@ html, body {
     text-align: center;
     margin-top: 10px;
 }
-
 .container-opcao-carrinho{
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
+    flex-direction: row;
+    justify-content: center;
+
 }
+
+ .opcao-compra{
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+} 
 
 
                                                                                 /* // CARRINHO // */
@@ -90,6 +89,7 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: visible;
 }
 
 .logo-nav{
@@ -234,7 +234,6 @@ html, body {
     padding: 10px 0;
     border-bottom: 2px solid #000;
     text-align: center;
-    width: 50%;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
@@ -281,7 +280,8 @@ html, body {
 #item-carrinho {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    gap: 10px;
 }
 
 .item-row {
@@ -291,6 +291,7 @@ html, body {
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
     text-align: center;
+    width: 100%;
 }
 
 .item-row .produto {
@@ -350,7 +351,10 @@ html, body {
 }
 
 #item-carrinho {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
 }
 
 .header-carrinho, .item-row {

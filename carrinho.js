@@ -5,7 +5,7 @@ function adicionarItem(nome,preco,imagem){
     itemCarrinho.innerHTML = `
     
     <div class="produto">
-        <img src="${imagem}" alt="${nome}" class="imagem-produto />
+        <img src="${imagem}" alt="${nome}" class="imagem-produto" />
         <span class="nome-produto">${nome} </span>
     </div>
 
@@ -22,7 +22,7 @@ function adicionarItem(nome,preco,imagem){
         </div>
 
         <div class="total">
-            <span class="valor-total">R$ ${preco}</span>
+            <span class="valor-total">R$ ${preco.toFixed(2)}</span>
         </div>
 
         <div class="delete">
@@ -61,6 +61,6 @@ function deletarItem(button) {
     atualizarTotal();
 }
 
-adicionarItem('Cachorro filhote macho', 30.00, 'assets/filhote-imagem.jpg');
-adicionarItem('Outro Produto', 49.90);
-adicionarItem('Inro Produto', 49.95);
+
+adicionarItem('Produto 2', 49.90, 'carrinho/filhote-imagem.jpg');
+adicionarItem('Outro Produto', 49.95, '');
