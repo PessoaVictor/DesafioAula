@@ -1,1 +1,18 @@
-
+header{
+  display: flex;
+  background-color: #FDE2B7;
+  ;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 200px;
+}
+nav ul{
+  display: flex;
+}
+nav ul a{
+  color: black;
+  margin: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.4rem;
+}

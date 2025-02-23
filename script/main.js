@@ -57,4 +57,3 @@ produtosbtn.forEach(produto => {
 });
 //produtos fim
 
-alert('Ola mundo');
