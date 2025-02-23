@@ -40,6 +40,7 @@ body{
     width: 300px;
     height: 350px;
     border-radius: 30px;
+    box-shadow: 5px 5px 12px #1d1d1d52;
     margin: auto;
 }
 
