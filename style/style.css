@@ -1,4 +1,6 @@
-@import url(s/geral.css);
+
+@import url(/style/geral.css);
 @import url(/style/header.css);
 @import url(./section-footer.css);
 @import url(/style/about.css);
+
