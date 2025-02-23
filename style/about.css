@@ -1,0 +1,27 @@
+.about-content{
+  display: flex;
+  background-color: #44261B;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+  width: 100%;
+  padding: 120px;
+}
+.about-text{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 30px;
+}
+.about-text p{
+  width: 400px;
+  font-size: 3.3rem;
+}
+.about-text a{
+  color: black;
+  background-color: #FDE2B7;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+}

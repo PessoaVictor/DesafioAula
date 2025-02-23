@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+#produtos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #784832;
+    width: 100%;
+    
+}
+#produtos h2{
+    text-align: center;
+    margin:10px;
+    color: white;
+}
+#produtosEmAlta{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+#produtosEmAlta h1{
+    display: block;
+    text-align: center;
+}
+#produtosNormais{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 7px;
+    height: 340px;
+}
+.card img{
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+}
+.card p{
+    margin:20px;
+    font-size: 18px;
+    width: 200px;
+}
+.nome-carrinho{
+    font-weight: 600;
+}
+.preco-carrinho{
+    font-weight: 800;
+}
+.card button{
+    padding: 10px 20px;
+    background-color: rgb(52, 230, 52);
+    border: 0;
+    border-radius: 7px;
+    color: white;
+}
+
+.card button:hover{
+    background-color: rgb(13, 245, 13);
+    cursor: pointer;
+}
+#links{
+    background-color: #FDE2B7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+#links ul img{
+    width: 40px;
+    height: 40px;
+}
+#links img{
+    width: 80px;
+    height: 80px;
+}
+#links ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+#direitos{
+    font-size: 18px;
+    text-align: center;
+    background-color: white;
+}
+#direitos p{
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+}
