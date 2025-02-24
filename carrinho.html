@@ -12,12 +12,12 @@
         <nav class="navegue">
             <div class="container">
                 <div class="logo-nav">
-                    <img src="/carrinho/3500_2_03.jpg" alt="Pet - shop online" title="Pet - shop online" class="logo-header"></img>
+                    <img src="carrinho/fotos-carrinho/3500_2_03.jpg" alt="Pet - shop online" title="Pet - shop online" class="logo-header"></img>
                 </div>
 
                 <div class="logo-nav-end">
                         <div class="nav-logo-security">
-                            <img src="carrinho/padlock_icon-icons.com_73471.svg" alt="Ambiente Seguro" class="logo-security">
+                            <img src="carrinho/fotos-carrinho/padlock_icon-icons.com_73471.svg" alt="Ambiente Seguro" class="logo-security">
                             <span class="span-security">Ambiente Seguro</span>
 
                         </div>
@@ -34,7 +34,7 @@
             <div class="frete-gratis">
 
                 <div class="icone-frete">
-                    <img src="carrinho/frete-gratis (1).png" alt="Frete Grátis" class="icone-frete-img">
+                    <img src="carrinho/fotos-carrinho/frete-gratis (1).png" alt="Frete Grátis" class="icone-frete-img">
                     <span class="span-frete">Frete Grátis para todo o Brasil -</span>
                     <a href="" class="regras">Confira as regras</a>
                 </div>
@@ -48,12 +48,12 @@
 
                         <div class="banner-assinatura">
                             <div class="desc-esquerda">
-                                <img src="carrinho/press-button.png" class="icone-desc-esquerda">
+                                <img src="carrinho/fotos-carrinho/press-button.png" class="icone-desc-esquerda">
                                 <span class="span-desc-esquerda">Assine agora e ganhe 10% de desconto em todas a compras no app, site e lojas físicas.</span>
                             </div>
                             <div class="desc-direita">
                                 <span class="span-desc-direita">Eu quero</span>
-                                <img src="carrinho/arrow.svg" alt="" class="arrow-banner-direito">
+                                <img src="carrinho/fotos-carrinho/arrow.svg" alt="" class="arrow-banner-direito">
                             </div>
                         </div>
                     </div>
@@ -73,14 +73,11 @@
                             <div class="carrinho-title-desconto">Desconto</div>
                             <div class="carrinho-title-preco">Preço</div>
                             <div class="carrinho-title-quantidade">Quantidade</div>
-                            <div class="carrinho-title-total">Total</div>
                             <div class="carrinho-title-delete">Delete</div>
                         </div>
                     </div>
 
-
                     <div id="item-carrinho"></div>
-
                 </div>
             </div>
         
@@ -90,18 +87,26 @@
                     <div class="opcao">
 
                         <h2>CEP DA ENTREGA</h2>
-                        <input type="text" placeholder="Digite o seu CEP" class="input-cep">
+                        <input type="text" placeholder="Digite o seu CEP" class="input-cep" id="cep-consulta">
+                        <button onclick="consultarFrete()" class="button-cep">Consultar Frete</button>
+                        <p id="mensagem-frete"></p>
 
                     </div>
 
                     <div class="opcao">
                         <h2>CUPOM DE DESCONTO</h2>
                         <input type="text" placeholder="Digite seu cupom" class="input-cupom">
+                        <button onclick="aplicarCupom()" class="button-cupom">Aplicar Cupom</button>
+                        <span id="aviso-cupom" style="color: red; display: none;">Cupom Inválido</span>
                     </div>
             
                     <div class="opcao">
                         <h2>FINALIZAR COMPRA</h2>
+                        <div id="total-compra" class="total-compras">
+                            Total: R$0,00
+                        </div>
                         <button class="btn-finalizar">Finalizar Compra</button>
+                        <span id="aviso-compra-finalizada"></span>
                     </div>
 
                 </div>
