@@ -136,6 +136,6 @@ function deletarItem(button) {
                                         /* LOAD ITEMS */
 
 window.onload = function() {
-adicionarItem('Produto 1', 49.90, 'assets/fotos-carrinho/racao_pet.png');
-adicionarItem('Produto 2', 49.90, 'assets/fotos-carrinho/racao_pet.png');
+adicionarItem('Produto 1', 49.90, './assets/fotos-carrinho/racao_pet.png');
+adicionarItem('Produto 2', 49.90, './assets/fotos-carrinho/racao_pet.png');
 };
