@@ -35,31 +35,6 @@ function adicionarItem(nome,preco,imagem){
     atualizarTotal();
 }
 
-function atualizarTotal() {
-    let totalCarrinho = 0;
-    const itens = document.querySelectorAll('.item-row');
-
-    itens.forEach(item => {
-        const preco = parseFloat(item.querySelector('.valor-preco').innerText.replace('R$', '').trim());
-        const quantidade = parseInt(item.querySelector('.quantidade-input').value);
-
-        if (!isNaN(preco) && !isNaN(quantidade)) {
-            totalCarrinho += preco * quantidade;
-        }
-    });
-
-    // Aplica o desconto, caso exista
-    let valorDesconto = totalCarrinho * desconto;
-    totalCarrinho -= valorDesconto;
-
-    // Atualiza o total na div acima do botão "Finalizar Compra"
-    const totalCompra = document.getElementById('total-compra');
-    if (totalCompra) {
-        totalCompra.innerText = `Total: R$ ${totalCarrinho.toFixed(2)}`;
-    }
-}
-
-
 
                                                 /* Validar FRETE */
 
@@ -140,7 +115,6 @@ function finalizarCompra() {
     const mensagemFrete = document.getElementById('mensagem-frete');
     const avisoCompraFinalizada = document.getElementById('aviso-compra-finalizada');
 
-    // Verificar se o CEP já foi validado com sucesso
     if (mensagemFrete.style.color === 'green') {
         avisoCompraFinalizada.innerText = "Compra Finalizada com Sucesso!";
         avisoCompraFinalizada.style.color = "green";
@@ -162,6 +136,6 @@ function deletarItem(button) {
                                         /* LOAD ITEMS */
 
 window.onload = function() {
-adicionarItem('Produto 1', 49.90, 'carrinho/fotos-carrinho/racao_pet.png');
-adicionarItem('Produto 2', 49.90, 'carrinho/fotos-carrinho/racao_pet.png');
+adicionarItem('Produto 1', 49.90, 'assets/fotos-carrinho/racao_pet.png');
+adicionarItem('Produto 2', 49.90, 'assets/fotos-carrinho/racao_pet.png');
 };
