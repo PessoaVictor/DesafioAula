@@ -51,10 +51,12 @@ produtosbtn.forEach(produto => {
     preco = Number(preco.slice(preco.indexOf("$")+1, preco.length));
     preco = Number(preco.toFixed(2));
 
-    //dados do produto que vc clicou
-    console.log(nome, preco);
+    //jogando no localStorage
+    let produtoSelecionado = {nome, preco};
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        carrinho.push(produtoSelecionado);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
     });
 });
 //produtos fim
-
-alert('Ola mundo');
