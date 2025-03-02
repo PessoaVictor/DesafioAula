@@ -1,11 +1,11 @@
-function adicionarItem(nome,preco,imagem){
+function adicionarItem(nome, preco){ 
     const itemCarrinho = document.createElement('div');
     itemCarrinho.classList.add('item-row');
-
+    
     itemCarrinho.innerHTML = `
     
     <div class="produto">
-        <img src="${imagem}" alt="${nome}" class="imagem-produto" />
+        <img src="./assets/produtos/${nome}.jpg" alt="${nome}" class="imagem-produto" />
         <span class="nome-produto">${nome} </span>
     </div>
 
@@ -128,14 +128,37 @@ document.querySelector('.btn-finalizar').addEventListener('click', finalizarComp
 
                                                 /* DELETAR ITEMS */
 function deletarItem(button) {
-    button.closest('.item-row').remove();
+    
+    let itemRow = button.closest('.item-row'); // Encontra o item mais próximo
+                                                
+    let nomeProduto = itemRow.querySelector('.nome-produto').textContent.trim(); // Obtém o nome do produto
+                                                    
+    console.log("Nome do produto no HTML:", `"${nomeProduto}"`);
+                                                
+    let itensSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
+                                                
+    console.log("itensSalvos: ", itensSalvos);
+                                                
+    let novosItens = itensSalvos.filter(item => item.nome !== nomeProduto);
+                                                
+    localStorage.setItem('carrinho', JSON.stringify(novosItens));
+    itemRow.remove();
     atualizarTotal();
-}
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        
+        carrinho.forEach(produto => {
+            //adicionarItem(produto.nome, produto.preco, produto.imagem);
+            adicionarItem(produto.nome, produto.preco);
+        });
+    });
 
 
                                         /* LOAD ITEMS */
 
 window.onload = function() {
-adicionarItem('Produto 1', 49.90, './assets/fotos-carrinho/racao_pet.png');
-adicionarItem('Produto 2', 49.90, './assets/fotos-carrinho/racao_pet.png');
+//adicionarItem('Produto 1', 49.90, '/assets/fotos-carrinho/racao_pet.png');
+//adicionarItem('Produto 2', 49.90, '/assets/fotos-carrinho/racao_pet.png');
 };
