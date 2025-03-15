@@ -35,4 +35,5 @@
 }
 .plano-pet:hover{
   background-color: #e4bf85;
+  transition: .3s ease;
 }
