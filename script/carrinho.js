@@ -1,11 +1,9 @@
-function adicionarItem(nome, preco, imagem, quantidade = 1) {
-    const itemExistente = array
-        .from(document.querySelectorAll(".item-row"))
-        .find((item) => {
+function adicionarItem(nome, preco, quantidade = 1) {
+    const itemExistente = Array.from(document.querySelectorAll(".item-row")).find((item) => {
             return item.querySelector(".nome-produto").innerText === nome;
         });
     if (itemExistente) {
-        const inputQuantidade = itemExistente.querySelectorAll(".quantidade-input");
+        const inputQuantidade = itemExistente.querySelector(".quantidade-input");
         inputQuantidade.value = parseInt(inputQuantidade.value) + quantidade;
         atualizarTotal();
         return;
@@ -16,7 +14,7 @@ function adicionarItem(nome, preco, imagem, quantidade = 1) {
     itemCarrinho.innerHTML = `
     
     <div class="produto">
-        <img src="${imagem}" alt="${nome}" class="imagem-produto" />
+        <img src="./assets/produtos/${nome}.jpg" alt="${nome}" class="imagem-produto" />
         <span class="nome-produto">${nome} </span>
     </div>
 
@@ -42,7 +40,6 @@ function adicionarItem(nome, preco, imagem, quantidade = 1) {
     /* adicionar item-carrinho */
 
     document.getElementById("item-carrinho").appendChild(itemCarrinho);
-
     atualizarTotal();
 }
 
@@ -51,7 +48,7 @@ function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
     carrinho.forEach((produto) => {
-        adicionarItem(produto.nome, produto.preco, produto.imagem, produto.quantidade);
+        adicionarItem(produto.nome, produto.preco, produto.quantidade);
     });
 }
 
@@ -66,9 +63,7 @@ function salvarCarrinho() {
             item.querySelector(".valor-preco").innerText.replace("R$", "").trim()
         );
         const quantidade = parseInt(item.querySelector(".quantidade-input").value);
-        const imagem = item.querySelector('.imagem-produto').src;
-
-        carrinho.push({ nome, preco, imagem, quantidade });
+        carrinho.push({ nome, preco, quantidade });
     });
 
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
