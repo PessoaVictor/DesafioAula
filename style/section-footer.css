@@ -9,12 +9,18 @@
     justify-content: center;
     background-color: #784832;
     width: 100%;
-    
 }
 #produtos h2{
     text-align: center;
     margin:10px;
     color: white;
+}
+#produtos a{
+    text-align: center;
+    margin: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
 }
 #produtosEmAlta{
     display: flex;
