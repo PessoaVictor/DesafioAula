@@ -1,11 +1,9 @@
 function adicionarItem(nome, preco, imagem, quantidade = 1) {
-    const itemExistente = array
-        .from(document.querySelectorAll(".item-row"))
-        .find((item) => {
+    const itemExistente = Array.from(document.querySelectorAll(".item-row")).find((item) => {
             return item.querySelector(".nome-produto").innerText === nome;
         });
     if (itemExistente) {
-        const inputQuantidade = itemExistente.querySelectorAll(".quantidade-input");
+        const inputQuantidade = itemExistente.querySelector(".quantidade-input");
         inputQuantidade.value = parseInt(inputQuantidade.value) + quantidade;
         atualizarTotal();
         return;
