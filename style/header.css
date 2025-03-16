@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 .sticky{
-    background-color: #784832a2;
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    animation: slideDown 0.35s ease-out;
     
     & .navbar-item{
-        color: #f2f2f2;
+        color: #000000;
         transition: .3s ease;
     }
     & .navbar-item:hover{
@@ -11,12 +14,23 @@
         color: #f2f2f2;
         transition: .3s ease;
     }
+    .icons i{
+        color: #000000;
+    }
     .icons i:hover{
         background-color: #b96a4d;
         color: #f2f2f2;
         transition: .3s ease;
     }
-}
+}   
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 body{
     background: #b96a4d;
 }

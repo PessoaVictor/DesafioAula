@@ -60,3 +60,24 @@ produtosbtn.forEach(produto => {
     });
 });
 //produtos fim
+
+//header effects
+function stickyHeader(){
+    const header = document.querySelector("header");
+    window.onscroll = () => {
+        header.classList.toggle('sticky', window.scrollY > 70);
+    }
+}
+stickyHeader();
+
+function retornarAoTopo(){
+    const logo = document.querySelector(".logo");
+    logo.onclick = () => {
+        eventpreventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+    };
+}
+retornarAoTopo();
