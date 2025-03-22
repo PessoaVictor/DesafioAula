@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style/style.css">
-  <title>Projeto Pet-Shop</title>
-</head>
-<body>
-  <script src="/script/main.js"></script>
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Borcelle Pet-Shop</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./assets/logo.svg" alt="Logo" />
+        </a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="./carrinho.html">
+              <img src="./assets/cart.svg" target="_blank" alt="Carrinho" id="cart-icon" />
+            </a>
+          </li>
+          <li>
+            <a href="./login-page.html" target="_blank" alt="Login" id="login">Entrar</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section class="about" id="about">
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Cuidamos do seu pet com carinho e dedicação! 🐶🐱💙 Confie em
+              <span class="highlight">quem ama e protege como você.</span>
+            </p>
+            <a href="">Cadastre-se já!</a>
+          </div>
+          <div class="about-image">
+            <picture>
+              <img src="./assets/petcaring.svg" alt="Animais" />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <section id="produtos">
+        <h2>Produtos em alta</h2>
+        <div id="produtosEmAlta"></div>
+        <h2>Lista de Produtos</h2>
+        <div id="produtosNormais"></div>
+        <a href="./produtos.html">Ver todos os Produtos</a>
+      </section>
+    </main>
+    <footer>
+      <div id="links">
+        <img src="./assets/logo.svg" id="logo" alt="Logo" />
+        <ul>
+          <li><img src="./assets/redes/linkedin.svg" alt="" /></li>
+          <li><img src="./assets/redes/Facebook.svg" alt="" /></li>
+          <li><img src="./assets/redes/instagram.svg" alt="" /></li>
+          <li><img src="./assets/redes/whatsapp.svg" alt="" /></li>
+        </ul>
+      </div>
+      <div id="direitos">
+        <p>
+          Peter Center Comércio Participações S/A - CNPJ 16.378.118/7713-42 - Endereço: Rua Dr. veloz Paulo Alho, 195 - Pari - São Paulo - SP - CEP: 01095-020 
+          Copyright© 2025 Peter lefters Comércio e Participações S/A - Todos os direitos reservados
+        </p>
+      </div>
+    </footer>
+    <script src="./script/main.js"></script>
+  </body>
 </html>
