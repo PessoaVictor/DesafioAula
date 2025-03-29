@@ -1,6 +1,6 @@
-document.getElementById("cadastro").addEventListener("submit", function (event){
+document.getElementById("cadastro").addEventListener("submit", function (event) {
     event.preventDefault();
-    var nome = document.getElementById("name").value;
+    var nome = document.getElementById("nome").value;
     var email = document.getElementById("email").value;
     var senha = document.getElementById("password").value;
 
@@ -10,7 +10,7 @@ document.getElementById("cadastro").addEventListener("submit", function (event){
         password: senha,
     };
 
-    localStorage.setItem(username, JSON.stringify(usuario));
+    localStorage.setItem(email, JSON.stringify(usuario));
     alert("Cadastro feito com sucesso!");
-    window.location.href = "login-page.html"
+    window.location.href = "login-page.html";
 });
