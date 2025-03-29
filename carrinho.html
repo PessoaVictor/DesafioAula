@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/carrinho.css">
+    <title>Carrinho | Nome_Loja</title>
+</head>
+<body>
+    <header>
+        <nav class="navegue">
+            <div class="container">
+                <div class="logo-nav">
+                    <a href="./index.html">
+                        <img src="./assets/logo/petshop-logo-carrinho.png" alt="Pet - shop online" title="Pet - shop online" class="logo-header"></img>
+                    </a>
+                </div>
+
+                <div class="logo-nav-end">
+                        <div class="nav-logo-security">
+                            <img src="./assets/icons/lock-icon.svg" alt="Ambiente Seguro" class="logo-security">
+                            <span class="span-security">Ambiente Seguro</span>
+
+                        </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    
+    <main>
+
+            <div class="frete-gratis">
+
+                <div class="icone-frete">
+                    <img src="./assets/icons/icon-frete-gratis.png" alt="Frete Grátis" class="icone-frete-img">
+                    <span class="span-frete">Frete Grátis para todo o Brasil -</span>
+                    <a href="" class="regras">Confira as regras</a>
+                </div>
+
+            </div>
+
+
+            <div class="container-main">
+                
+                        <h1 class="titulo-main">Carrinho de Compras</h1>
+
+                        <div class="banner-assinatura">
+                            <div class="desc-esquerda">
+                                <img src="./assets/icons/press-button.png" class="icone-desc-esquerda">
+                                <span class="span-desc-esquerda">Assine agora e ganhe 10% de desconto em todas a compras no app, site e lojas físicas.</span>
+                            </div>
+                            <div class="desc-direita">
+                                <span class="span-desc-direita">Eu quero</span>
+                                <img src="./assets/icons/arrow.svg" alt="" class="arrow-banner-direito">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container-carrinho">
+                <div class="carrinho">
+                    
+                    <div class="header-carrinho">
+                        <div class="header-carrinho-esquerdo">
+                            <div class="titulo-carrinho">Produtos</div>
+                        </div>
+                        
+                        <div class="header-carrinho-direito">
+                            <div class="carrinho-title-desconto">Desconto</div>
+                            <div class="carrinho-title-preco">Preço</div>
+                            <div class="carrinho-title-quantidade">Quantidade</div>
+                            <div class="carrinho-title-delete">Delete</div>
+                        </div>
+                    </div>
+
+                    <div id="item-carrinho"></div>
+                </div>
+            </div>
+        
+
+            <div class="container-opcao-carrinho">
+                <div class="opcao-compra">
+                    <div class="opcao">
+
+                        <h2>CEP da entrega</h2>
+                        <input type="text" placeholder="Digite o seu CEP" class="input-cep" id="cep-consulta">
+                        <button onclick="consultarFrete()" class="button-cep">Consultar Frete</button>
+                        <p id="mensagem-frete"></p>
+
+                    </div>
+
+                    <div class="opcao">
+                        <h2>Cupom de desconto</h2>
+                        <input type="text" placeholder="Digite seu cupom" class="input-cupom">
+                        <button onclick="aplicarCupom()" class="button-cupom">Aplicar Cupom</button>
+                        <span id="aviso-cupom" style="color: red; display: none;">Cupom Inválido</span>
+                    </div>
+            
+                    <div class="opcao">
+                        <h2>Resumo do pedido</h2>
+                        <div id="total-compra" class="total-compras">
+                            Total: R$0,00
+                        </div>
+                        <button class="btn-finalizar">Finalizar Compra</button>
+                        <span id="aviso-compra-finalizada"></span>
+                    </div>
+
+                </div>
+            </div>
+
+    </main>
+    
+
+    <script src="./script/carrinho.js"></script>
+</body>
+</html>
