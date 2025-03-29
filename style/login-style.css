@@ -65,19 +65,18 @@ body{
     margin-top: 1rem;
     display: flex;
     align-items: start;
-    justify-content: center;
     flex-direction: column;
     padding: 15px;
 }
 
-.login-informations label{
+.login-informations form label{
     display: flex;
     font-size: 16.8px;
     font-weight: 500;
     margin-bottom: 4px;
 }
 
-.login-informations input{
+.login-informations form input{
     background-color: var(--gray);
     width: 100%;
     padding: 5px;
@@ -86,15 +85,19 @@ body{
     margin-bottom: 5px;
 }
 
-.login-frame-container button{
+.login-informations .buttonConfirm button{
     display: flex;
-    align-items: center;
     justify-content: center;
+    width: 100%;
     background-color: var(--dark-brown);
     padding: 6px 18px;
     border: none;
+    color: #D9D9D9;
+    font-size: 14px;
+    font-weight: 500;
     border-radius: 20px;
-    margin-bottom: 18px;
+    margin-top: 12px;
+    margin-bottom: 8px;
 }
 
 .login-frame-container a{
@@ -118,3 +121,6 @@ body{
     font-weight: 600;
 }
 
+.login-frame-container a:hover{
+    text-decoration: underline;
+}
