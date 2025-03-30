@@ -9,7 +9,6 @@ const cartIcon = document.getElementById("cart-icon");
     });
 
 //produtos inicio
-  
 let produtosEmAlta = document.querySelector("#produtosEmAlta");
 let produtosNormal = document.querySelector("#produtosNormais");
 
