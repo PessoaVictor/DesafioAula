@@ -1,0 +1,20 @@
+:root {
+  --white: #ffff;
+  --text-white: #f1f1f1;
+  --black: #1d1d1d;
+  --dark-brown: #44271a;
+  --brown: #784832;
+  --light-brown: #9d7049;
+  --beige: #fce1b6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #44271a;
+}
