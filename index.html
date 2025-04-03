@@ -74,13 +74,5 @@
       </div>
     </footer>
     <script src="./script/main.js"></script>
-    <script>
-        let usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
-        if (usuarioLogado && usuarioLogado.length > 0) {
-          console.log('Bem-vindo:', usuarioLogado[0].email);
-        } else {
-          console.log('Nenhum usuário logado.');
-        }
-    </script>
   </body>
 </html>
