@@ -3,10 +3,9 @@ let nav = document.querySelector(".menu");
 let ul = nav.querySelector("ul")
 if(login.length>0){
     ul.innerHTML += `
-    <li><a href="#" target="_self" id="meuLink">Sair</a></li>
+    <li><a href="index.html" target="_self" id="meuLink">Sair</a></li>
     `;
-    document.getElementById("meuLink").addEventListener("click", function(event) {
-        event.preventDefault();
+    document.getElementById("meuLink").addEventListener("click", function() {
         sessionStorage.clear();
         let links = ul.getElementsByTagName("li");
         links[3].remove();
