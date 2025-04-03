@@ -1,5 +1,5 @@
 let login = JSON.parse(sessionStorage.getItem('usuarioLogado')) || [];
-let nav = document.querySelector(".nav");
+let nav = document.querySelector(".menu");
 let ul = nav.querySelector("ul")
 if(login.length>0){
     ul.innerHTML += `
@@ -13,45 +13,66 @@ if(login.length>0){
     });
 }
 
+const cartIcon = document.getElementById("cart-icon");
+
+    cartIcon.addEventListener("mouseenter", () => {
+    cartIcon.src = "./assets/cart_hover.svg";
+    });
+
+    cartIcon.addEventListener("mouseleave", () => {
+    cartIcon.src = "./assets/cart.svg";
+    });
 
 //produtos inicio
 let produtosEmAlta = document.querySelector("#produtosEmAlta");
 let produtosNormal = document.querySelector("#produtosNormais");
 
 let ProdutosAlta = [
-    { nome: "desinfetante e bactericida", descricao: "lorem ipsum", preco: 70 },
-    { nome: "alimento natural para coelho", descricao: "lorem ipsum", preco: 36 },
-    { nome: "cama preta zee", descricao: "lorem ipsum", preco: 540 },
-    { nome: "bebedouro", descricao: "lorem ipsum", preco: 75.2 },
-    { nome: "mordedor galinha para cachorro", descricao: "lorem ipsum", preco: 8.7 },
-    { nome: "mordedor bolinha", descricao: "lorem ipsum", preco: 7.6 }
+    { nome: "Desinfetante e bactericida", descricao: "lorem ipsum", preco: 70 },
+    { nome: "Alimento natural para coelho", descricao: "lorem ipsum", preco: 36 },
+    { nome: "Cama preta Zee", descricao: "lorem ipsum", preco: 540 },
+    { nome: "Bebedouro", descricao: "lorem ipsum", preco: 75.2 },
+    { nome: "Mordedor galinha para cachorro", descricao: "lorem ipsum", preco: 8.7 },
+    { nome: "Mordedor bolinha", descricao: "lorem ipsum", preco: 7.6 }
 ];
 
 let Produtos = [
-    { nome: "cortador de unhas", descricao: "lorem ipsum", preco: 25.2 },
-    { nome: "mini bifinho para cachorro", descricao: "lorem ipsum", preco: 25.5 },
-    { nome: "tapete limpa patas", descricao: "lorem ipsum", preco: 56 },
-    { nome: "coleira antipulgas", descricao: "lorem ipsum", preco: 200 },
-    { nome: "bandeja preta para gatos", descricao: "lorem ipsum", preco: 20 },
-    { nome: "fonte aqua mini", descricao: "lorem ipsum", preco: 96 }
+    { nome: "Cortador de unhas", descricao: "lorem ipsum", preco: 25.2 },
+    { nome: "Mini bifinho para cachorro", descricao: "lorem ipsum", preco: 25.5 },
+    { nome: "Tapete limpa patas", descricao: "lorem ipsum", preco: 56 },
+    { nome: "Coleira antipulgas", descricao: "lorem ipsum", preco: 200 },
+    { nome: "Bandeja preta para gatos", descricao: "lorem ipsum", preco: 20 },
+    { nome: "Fonte aqua mini", descricao: "lorem ipsum", preco: 96 }
 ];
         
-        function RenderizarProdutos(lista, tipoLista){
-
-            for(let produto of lista){
-            let cardProduto = document.createElement("div");
-            cardProduto.classList.add("card");
-            cardProduto.innerHTML =`
-               <img src="./assets/produtos/${produto.nome}.jpg" class="img-carrinho">
-                <p class="nome-carrinho">${produto.nome}</p>
-                <p class="preco-carrinho">Preço: R$ ${produto.preco.toFixed(2)}</p>
-                <button class="btn-add-carrinho" type="submit">Adicionar ao carrinho</button>
-            `;
-            tipoLista.appendChild(cardProduto);
-            }
-        };
-        RenderizarProdutos(ProdutosAlta, produtosEmAlta);
-        RenderizarProdutos(Produtos, produtosNormal);
+function RenderizarProdutos(lista, tipoLista){
+                
+    for(let produto of lista){
+        let cardProduto = document.createElement("div");
+        cardProduto.classList.add("card");
+        if(document.title == "Borcelle Pet-Shop"){
+        cardProduto.innerHTML =`
+           <img src="./assets/produtos/${produto.nome}.jpg" class="img-carrinho">
+            <p class="nome-carrinho" style="vertica">${produto.nome}</p>
+            <p class="preco-carrinho">Preço: R$ ${produto.preco.toFixed(2)}</p>
+            <button class="btn-add-carrinho" type="submit">Adicionar ao carrinho</button>
+        `;
+        tipoLista.appendChild(cardProduto);
+        
+        }else if(document.title == "Produtos"){
+            cardProduto.innerHTML +=`
+           <img src="./assets/produtos/${produto.nome}.jpg" class="img-carrinho">
+            <p class="nome-carrinho" style="vertica">${produto.nome}</p>
+            <p class="preco-carrinho">Preço: R$ ${produto.preco.toFixed(2)}</p>
+            <button class="btn-add-carrinho" type="submit">Adicionar ao carrinho</button>
+        `;
+        produtosTodos.appendChild(cardProduto);
+        }
+        
+        }
+};
+RenderizarProdutos(ProdutosAlta, produtosEmAlta);
+RenderizarProdutos(Produtos, produtosNormal);
 
 let produtosbtn = document.querySelectorAll(".btn-add-carrinho");
 produtosbtn.forEach(produto => {

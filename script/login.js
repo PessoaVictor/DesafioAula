@@ -20,7 +20,7 @@ document.getElementById("login").addEventListener("submit", function (event) {
                 let loginDados = {
                     email: emailDigitado,
                     senha: passwordDigitado
-                }
+                };
                 
                 login.push(loginDados);
                 sessionStorage.setItem("usuarioLogado", JSON.stringify(login));

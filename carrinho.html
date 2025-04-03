@@ -3,63 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+          rel="stylesheet">
     <link rel="stylesheet" href="./style/carrinho.css">
-    <title>Carrinho | Nome_Loja</title>
+    <title>Carrinho | Borcelle</title>
 </head>
 <body>
-    <header>
+    <header class="header-compras">
         <nav class="navegue">
+
             <div class="container">
+
                 <div class="logo-nav">
                     <a href="./index.html">
-                        <img src="./assets/logo/petshop-logo-carrinho.png" alt="Pet - shop online" title="Pet - shop online" class="logo-header"></img>
+                        <img src="./assets/logo.svg" alt="Pet - shop online" title="Pet - shop online" class="logo-header"></img>
                     </a>
                 </div>
 
                 <div class="logo-nav-end">
-                        <div class="nav-logo-security">
-                            <img src="./assets/icons/lock-icon.svg" alt="Ambiente Seguro" class="logo-security">
-                            <span class="span-security">Ambiente Seguro</span>
-
-                        </div>
+                    <div class="nav-logo-security">
+                        <img src="./assets/fotos-carrinho/padlock_icon-icons.com_73471.svg" alt="Ambiente Seguro" class="logo-security">
+                        <span class="span-security">Ambiente Seguro</span>
+                    </div>
                 </div>
+                
             </div>
+
         </nav>
     </header>
-
-
-
     
     <main>
 
             <div class="frete-gratis">
-
                 <div class="icone-frete">
-                    <img src="./assets/icons/icon-frete-gratis.png" alt="Frete Grátis" class="icone-frete-img">
+                    <img src="./assets/fotos-carrinho/frete-gratis (1).png" alt="Frete Grátis" class="icone-frete-img">
                     <span class="span-frete">Frete Grátis para todo o Brasil -</span>
                     <a href="" class="regras">Confira as regras</a>
                 </div>
-
             </div>
 
-
             <div class="container-main">
-                
-                        <h1 class="titulo-main">Carrinho de Compras</h1>
-
+                    <h1 class="titulo-main">Carrinho de Compras</h1>
                         <div class="banner-assinatura">
                             <div class="desc-esquerda">
-                                <img src="./assets/icons/press-button.png" class="icone-desc-esquerda">
+                                <img src="./assets/fotos-carrinho/press-button.png" class="icone-desc-esquerda">
                                 <span class="span-desc-esquerda">Assine agora e ganhe 10% de desconto em todas a compras no app, site e lojas físicas.</span>
                             </div>
                             <div class="desc-direita">
                                 <span class="span-desc-direita">Eu quero</span>
-                                <img src="./assets/icons/arrow.svg" alt="" class="arrow-banner-direito">
+
+                                <img src="./assets/fotos-carrinho/arrow.svg" alt="" class="arrow-banner-direito">
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
 
@@ -88,7 +86,7 @@
                 <div class="opcao-compra">
                     <div class="opcao">
 
-                        <h2>CEP da entrega</h2>
+                        <h2>CEP DA ENTREGA</h2>
                         <input type="text" placeholder="Digite o seu CEP" class="input-cep" id="cep-consulta">
                         <button onclick="consultarFrete()" class="button-cep">Consultar Frete</button>
                         <p id="mensagem-frete"></p>
@@ -96,14 +94,16 @@
                     </div>
 
                     <div class="opcao">
-                        <h2>Cupom de desconto</h2>
+
+                        <h2>CUPOM DE DESCONTO</h2>
                         <input type="text" placeholder="Digite seu cupom" class="input-cupom">
                         <button onclick="aplicarCupom()" class="button-cupom">Aplicar Cupom</button>
                         <span id="aviso-cupom" style="color: red; display: none;">Cupom Inválido</span>
                     </div>
             
                     <div class="opcao">
-                        <h2>Resumo do pedido</h2>
+
+                        <h2>FINALIZAR COMPRA</h2>
                         <div id="total-compra" class="total-compras">
                             Total: R$0,00
                         </div>

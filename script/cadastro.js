@@ -9,8 +9,9 @@ document.getElementById("cadastro").addEventListener("submit", function (event) 
         email: email,
         password: senha,
     };
-    listaCadastro = JSON.parse(localStorage.getItem('usuariosCadastrados')) || [];
-    console.log(listaCadastro, usuario)
+    
+    let listaCadastro = JSON.parse(localStorage.getItem('usuariosCadastrados')) || [];
+    console.log(listaCadastro, usuario);
     listaCadastro.push(usuario);
     localStorage.setItem('usuariosCadastrados', JSON.stringify(listaCadastro));
     alert("Cadastro feito com sucesso!");
