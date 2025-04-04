@@ -122,11 +122,13 @@ function aplicarCupom() {
         avisoCupom.innerText = "Cupom aplicado com sucesso! Desconto de 10% ativado.";
         avisoCupom.style.color = "green";
         avisoCupom.style.display = "inline";
+        localStorage.setItem("cupomAplicado", cupomInserido);
     } else {
         desconto = 0;
         avisoCupom.innerText = "Cupom inválido!"
         avisoCupom.style.color = "red"
         avisoCupom.style.display = "inline";
+        localStorage.removeItem("cupomAplicado");
     }
 
     atualizarTotal();
@@ -242,5 +244,11 @@ document
 
 window.addEventListener("load", () => {
     carregarCarrinho();
+    const cupomSalvo = localStorage.getItem("cupomAplicado");
+    if (cupomSalvo) {
+        document.querySelector(".input-cupom").value = cupomSalvo;
+        aplicarCupom();
+
+    }
     atualizarTotal();
 });
