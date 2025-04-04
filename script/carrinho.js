@@ -213,12 +213,21 @@ function finalizarCompra() {
         avisoCompraFinalizada.style.color = "red";
         return;
     }
+    let login = JSON.parse(sessionStorage.getItem('usuarioLogado')) || [];
 
     const cepValido = consultarFrete();
     if (!cepValido) {
         avisoCompraFinalizada.innerHTML = "Erro: informe um cep válido!";
         avisoCompraFinalizada.style.color = "red";
         return;
+    }
+    if(login.length<=0){
+        avisoCompraFinalizada.innerText = "Erro: vc precisa fazer login para finalizar!";
+        avisoCompraFinalizada.style.color = "red";
+        setTimeout (() => {
+            window.location.href = 'login-page.html'
+        }, 3000);
+        return;   
     }
 
     avisoCompraFinalizada.innerHTML = "Compra Finalizada";

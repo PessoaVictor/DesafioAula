@@ -1,3 +1,17 @@
+let login = JSON.parse(sessionStorage.getItem('usuarioLogado')) || [];
+let nav = document.querySelector(".menu");
+let ul = nav.querySelector("ul")
+if(login.length>0){
+    ul.innerHTML += `
+    <li><a href="index.html" target="_self" id="meuLink">Sair</a></li>
+    `;
+    document.getElementById("meuLink").addEventListener("click", function() {
+        sessionStorage.clear();
+        let links = ul.getElementsByTagName("li");
+        links[3].remove();
+    });
+}
+
 const cartIcon = document.getElementById("cart-icon");
 
     cartIcon.addEventListener("mouseenter", () => {

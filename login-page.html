@@ -12,21 +12,29 @@
   </head>
   <body>
     <div class="login-frame">
-      <div class="login-frame-container">
-        <div class="login-frame-section">
-          <img src="./assets/logo_alt.svg" alt="" width="150px" />
-          <span>LOGIN</span>
+        <div class="login-frame-container">
+            <div class="login-frame-section">
+                <img src="./assets/log.svg" alt="" width="150px">
+                <span>LOGIN</span>
+            </div>
+            <div class="login-informations">
+                <form id="login">
+                     <label for="email">Email</label>
+                     <input type="text" id="email">
+                     <label for="password">Senha</label>
+                     <input type="password" id="password">
+                     <div class="buttonConfirm">
+                         <button type="submit">Entrar</button>
+                     </div>
+                </form>
+            </div>
+            <h5>Não tem uma conta?</h5>
+          <a href="./login-page-cadastro.html">Faça o seu cadastro.</a>
         </div>
-        <div class="login-informations">
-          <label for="email">Email</label>
-          <input type="text"/>
-          <label for="Senha">Senha</label>
-          <input type="password"/>
-        </div>
-        <button><a href="./index.html">Entrar</a></button>
-        <h5>Não tem uma conta?</h5>
-        <a href="#">Faça o seu cadastro.</a>
       </div>
     </div>
-  </body>
+    
+<script src="./script/login.js"></script>    
+
+</body>
 </html>

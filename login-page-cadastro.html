@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/cadastro-style.css">
+    <title>Cadastro Page</title>
+</head>
+<body>
+
+    <div class="login-frame">
+        <div class="login-frame-container">
+            <div class="login-frame-section">
+                <img src="./assets/log.svg" alt="" width="150px">
+                <span>CADASTRO</span>
+            </div>
+            <div class="login-informations">
+                <form id="cadastro">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                    <div class="buttonConfirm">
+                        <button type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+            <h5>Já tem uma conta? <a href="./login-page.html">Entre por aqui.</a></h5>
+        </div>
+    </div>
+    
+    <script src="./script/cadastro.js"></script>
+</body>
+</html>
