@@ -96,7 +96,10 @@
                     <div class="opcao">
 
                         <h2>CUPOM DE DESCONTO</h2>
-                        <input type="text" placeholder="Digite seu cupom" class="input-cupom">
+                        <div class="desconto-container">
+                            <input type="text" placeholder="Digite seu cupom" class="input-cupom">
+                            <span class="remover-cupom" onclick="removerCupom()">x</span>
+                        </div>
                         <button onclick="aplicarCupom()" class="button-cupom">Aplicar Cupom</button>
                         <span id="aviso-cupom" style="color: red; display: none;">Cupom Inválido</span>
                     </div>
