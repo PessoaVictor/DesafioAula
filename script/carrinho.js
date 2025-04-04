@@ -119,18 +119,25 @@ function aplicarCupom() {
     .value.trim()
     .toUpperCase();
   const avisoCupom = document.getElementById("aviso-cupom");
-  const cuponsValidos = ["DESCONTO10"];
+  const cuponsValidos = ["DESCONTO10", "PRIMEIRACOMPRA"]; 
 
     // Verifica se o cupom inserido é válido
   const isCupomValido = cuponsValidos.includes(cupomInserido);
 
   if (isCupomValido) {
-    desconto = 0.1;
-    avisoCupom.innerText =
-      "Cupom aplicado com sucesso! Desconto de 10% ativado.";
+    if (cupomInserido === "PRIMEIRACOMPRA"){
+      desconto = 0.2;
+      avisoCupom.innerText = "Cupom aplicado com sucesso! Desconto de 20%.";
+      avisoCupom.style.color = "green";
+    } else {
+      desconto = 0.1;
+      avisoCupom.innerText = "Cupom aplicado com sucesso! Desconto de 10%.";
+      avisoCupom.style.color = "green";
+    }
     avisoCupom.style.color = "green";
     avisoCupom.style.display = "inline";
     localStorage.setItem("cupomAplicado", cupomInserido);
+
   } else {
     const cupomSalvo = localStorage.getItem("cupomAplicado");
     // Verifica uma única vez se o cupom salvo é válido
@@ -138,7 +145,7 @@ function aplicarCupom() {
 
     if (isCupomSalvoValido) {
       document.querySelector(".input-cupom").value = cupomSalvo;
-      desconto = 0.1;
+      desconto = cupomSalvo === "PRIMEIRACOMPRA" ? 0.2 : 0.1;
     } else {
       desconto = 0;
       avisoCupom.innerText = "Erro: cupom inválido!";
