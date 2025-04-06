@@ -60,7 +60,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   width: 100%;
   max-width: 180px;
   height: 40px;
@@ -71,11 +71,19 @@ body {
   transform: scale(1.1);
 }
 
-.input-cupom,
+.input-cupom {
+  padding: 10px;
+  width: 65%;
+  max-width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin-top: 10px;
+}
 .input-cep {
   padding: 10px;
-  width: 80%;
-  max-width: 250px;
+  width: 75%;
+  max-width: 200px;
   border-radius: 5px;
   border: 1px solid #ccc;
   text-align: center;
@@ -93,7 +101,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  width: 100%;
+  width: 80%;
   max-width: 200px;
   height: 40px;
 }
@@ -104,6 +112,56 @@ body {
   cursor: pointer;
   transition: 0.3s ease-in-out;
   transform: scale(1.1);
+}
+
+.remover-cupom {
+  padding: 10px;
+  background-color: #990000;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 38px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+  margin-left: 2px;
+}
+
+.remover-cupom:hover {
+  background-color: #660000;
+}
+
+.delete button {
+  background-color: #990000;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #f1f1f1;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.delete button:hover {
+  background-color: #660000;
+  transform: scale(1.1);
+}
+
+.mensagem-sucesso {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.mensagem-erro {
+  color: #990000;
+  font-weight: bold;
 }
 
 #mensagem-frete,
@@ -407,9 +465,9 @@ body {
   transition: 0.3s;
 }
 
-.quantidade-input::-webkit-inner-spin-button, 
+.quantidade-input::-webkit-inner-spin-button,
 .quantidade-input::-webkit-outer-spin-button {
-    opacity: 1;
+  opacity: 1;
 }
 
 .quantidade-input:focus {
@@ -440,24 +498,6 @@ body {
   border: none;
 }
 
-.delete button {
-  background-color: red;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.5;
-  color: #f1f1f1;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.delete button:hover {
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  transform: scale(1.1);
-}
-
 .carrinho {
   display: flex;
   flex-direction: column;
@@ -481,6 +521,7 @@ body {
   height: 100px;
   object-fit: cover;
   margin-right: 20px;
+  border-radius: 10;
 }
 
 .nome-produto {
@@ -568,7 +609,7 @@ body {
     width: 25px;
     height: 25px;
   }
-  
+
   .header-carrinho {
     grid-template-columns: 40% 15% 15% 15%;
     font-size: 16px;
@@ -597,6 +638,53 @@ body {
 
   .container-opcao-carrinho {
     padding: 0 10px;
+  }
+  .item-carrinho {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .item-carrinho td {
+    display: block;
+    width: 100%;
+  }
+
+  .item-carrinho td:nth-child(1) img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+
+  .item-carrinho td:nth-child(2),
+  .item-carrinho td:nth-child(3),
+  .item-carrinho td:nth-child(4),
+  .item-carrinho td:nth-child(5) {
+    font-size: 14px;
+  }
+
+  .item-carrinho td:nth-child(5) {
+    text-align: left;
+  }
+
+  .btn-excluir {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tabela-carrinho thead {
+    display: none;
+  }
+
+  .tabela-carrinho {
+    width: 100%;
+  }
+
+  .item-carrinho {
+    border-bottom: 1px solid #00000022;
+    margin-bottom: 20px;
   }
 }
 
@@ -642,5 +730,53 @@ body {
   .arrow-banner-direito {
     width: 22px;
     height: 22px;
+  }
+
+  .tabela-carrinho thead {
+    display: none;
+  }
+
+  .tabela-carrinho,
+  .tabela-carrinho tbody,
+  .tabela-carrinho tr,
+  .tabela-carrinho td {
+    display: block;
+    width: 100%;
+  }
+
+  .item-carrinho {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff1e0;
+  }
+
+  .item-carrinho td {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .item-carrinho td img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .item-carrinho .quantidade,
+  .item-carrinho .preco,
+  .item-carrinho .desconto,
+  .item-carrinho .btn-excluir {
+    width: 100%;
+    text-align: left;
+  }
+
+  .btn-excluir {
+    background-color: #c00;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
   }
 }

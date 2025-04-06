@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="./style/cadastro-style.css">
+    <title>Cadastro Page</title>
+</head>
+<body>
+    <header class="header-login">
+        <nav class="navegue">
+  
+            <div class="container">
+  
+                <div class="return">
+                    <img src="./assets/icons/left-arrow.svg" alt="Voltar" class="return-arrow" onclick="window.history.back()">
+                 </div>
+  
+                 <div class="logo-login">
+                    <a href="./index.html">
+                    <img src="./assets/logo.svg" alt="Pet - shop online" title="Pet - shop online" class="logo-header"></img>
+                    </a>
+                </div> 
+            
+            </div>
+  
+        </nav>
+    </header>
+
+    <div class="login-frame">
+        <div class="login-frame-container">
+            <div class="login-frame-section">
+                <img src="./assets/log.svg" alt="" width="150px">
+                <span>CADASTRO</span>
+            </div>
+            <div class="login-informations">
+                <form id="cadastro">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                    <div class="buttonConfirm">
+                        <button type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+            <h5>Já tem uma conta?</h5> 
+            <a href="./login-page.html">Faça o seu login.</a>
+        </div>
+    </div>
+    
+    <script src="./script/cadastro.js"></script>
+</body>
+</html>
