@@ -12,11 +12,11 @@ function adicionarItem(nome, preco, quantidade = 1) {
   }
   const itemCarrinho = document.createElement("div");
   itemCarrinho.classList.add("item-row");
-
+  let imgNome = nome.replace(/ /g, "-");
   itemCarrinho.innerHTML = `
     
     <div class="produto">
-        <img src="./assets/produtos/${nome}.jpg" alt="${nome}" class="imagem-produto" />
+        <img src="./assets/produtos/${imgNome}.jpg" alt="${nome}" class="imagem-produto" />
         <span class="nome-produto">${nome} </span>
     </div>
 
