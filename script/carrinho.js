@@ -19,10 +19,6 @@ function adicionarItem(nome, preco, quantidade = 1) {
         <img src="./assets/produtos/${nome}.jpg" alt="${nome}" class="imagem-produto" />
         <span class="nome-produto">${nome} </span>
     </div>
-
-    <div class="desconto">
-        <span class="valor-desconto">R$ 0,00</span>
-    </div>
     
     <div class="preco">
         <span class="valor-preco">R$ ${preco.toFixed(2)}</span>
@@ -187,18 +183,6 @@ function atualizarTotal() {
 
   let valorDesconto = subtotal * desconto;
   totalCarrinho = subtotal - valorDesconto;
-
-  itens.forEach((item) => {
-    const preco = parseFloat(
-      item.querySelector(".valor-preco").innerText.replace("R$", "").trim()
-    );
-    const quantidade = parseInt(item.querySelector(".quantidade-input").value);
-    const descontoItem = preco * quantidade * desconto;
-
-    item.querySelector(
-      ".valor-desconto"
-    ).innerText = `R$ ${descontoItem.toFixed(2)}`;
-  });
 
   /* ATUALIZAR EM DIV */
   const totalCompra = document.getElementById("total-compra");
