@@ -12,11 +12,11 @@ function adicionarItem(nome, preco, quantidade = 1) {
   }
   const itemCarrinho = document.createElement("div");
   itemCarrinho.classList.add("item-row");
-
+  let imgNome = nome.replace(/ /g, "-");
   itemCarrinho.innerHTML = `
     
     <div class="produto">
-        <img src="./assets/produtos/${nome}.jpg" alt="${nome}" class="imagem-produto" />
+        <img src="./assets/produtos/${imgNome}.jpg" alt="${nome}" class="imagem-produto" />
         <span class="nome-produto">${nome} </span>
     </div>
 
@@ -77,7 +77,10 @@ function consultarFrete() {
   const cepInput = document.getElementById("cep-consulta").value;
   const mensagemFrete = document.getElementById("mensagem-frete");
 
+  // Expressão regular para verificar se o CEP é numérico e tem 8 dígitos
   const cepValido = /^[0-9]{5}-?[0-9]{3}$/;
+
+  // Listar CEPs inválidos
   const cepsInvalidos = [
     "00000-000",
     "11111-111",
@@ -86,20 +89,19 @@ function consultarFrete() {
     "44444-444",
   ];
 
-  // Resetar classes antes de aplicar nova
-  mensagemFrete.classList.remove("mensagem-erro", "mensagem-sucesso");
-
+  // Verificar se o CEP inserido é inválido
   if (cepsInvalidos.includes(cepInput)) {
     mensagemFrete.innerText = "Erro: Informe um CEP válido!";
-    mensagemFrete.classList.add("mensagem-erro");
+    mensagemFrete.style.color = "red";
     return false;
   } else if (cepValido.test(cepInput)) {
-    mensagemFrete.innerText = "Seu CEP foi validado com sucesso! Frete grátis aplicado!";
-    mensagemFrete.classList.add("mensagem-sucesso");
+    mensagemFrete.innerText =
+      "Seu CEP foi validado com sucesso! Frete grátis aplicado!";
+    mensagemFrete.style.color = "green";
     return true;
   } else {
     mensagemFrete.innerText = "Erro: Informe um CEP válido!";
-    mensagemFrete.classList.add("mensagem-erro");
+    mensagemFrete.style.color = "red";
     return false;
   }
 }
@@ -119,26 +121,26 @@ function aplicarCupom() {
   const avisoCupom = document.getElementById("aviso-cupom");
   const cuponsValidos = ["DESCONTO10", "PRIMEIRACOMPRA"]; 
 
-  // Verifica se o cupom inserido é válido
+    // Verifica se o cupom inserido é válido
   const isCupomValido = cuponsValidos.includes(cupomInserido);
 
-  avisoCupom.classList.remove("mensagem-erro", "mensagem-sucesso");
-  avisoCupom.style.display = "inline";
-
   if (isCupomValido) {
-    if (cupomInserido === "PRIMEIRACOMPRA") {
+    if (cupomInserido === "PRIMEIRACOMPRA"){
       desconto = 0.2;
       avisoCupom.innerText = "Cupom aplicado com sucesso! Desconto de 20%.";
+      avisoCupom.style.color = "green";
     } else {
       desconto = 0.1;
       avisoCupom.innerText = "Cupom aplicado com sucesso! Desconto de 10%.";
+      avisoCupom.style.color = "green";
     }
-
-    avisoCupom.classList.add("mensagem-sucesso");
+    avisoCupom.style.color = "green";
+    avisoCupom.style.display = "inline";
     localStorage.setItem("cupomAplicado", cupomInserido);
 
   } else {
     const cupomSalvo = localStorage.getItem("cupomAplicado");
+    // Verifica uma única vez se o cupom salvo é válido
     const isCupomSalvoValido = cupomSalvo && cuponsValidos.includes(cupomSalvo);
 
     if (isCupomSalvoValido) {
@@ -147,7 +149,8 @@ function aplicarCupom() {
     } else {
       desconto = 0;
       avisoCupom.innerText = "Erro: cupom inválido!";
-      avisoCupom.classList.add("mensagem-erro");
+      avisoCupom.style.color = "red";
+      avisoCupom.style.display = "inline";
     }
   }
 
@@ -158,18 +161,12 @@ function removerCupom() {
   localStorage.removeItem("cupomAplicado");
   document.querySelector(".input-cupom").value = "";
   desconto = 0;
-
-  const avisoCupom = document.getElementById("aviso-cupom");
-
-  avisoCupom.innerText = "Cupom removido com sucesso!";
-  avisoCupom.classList.remove("mensagem-erro");
-  avisoCupom.classList.add("mensagem-sucesso");
-  avisoCupom.style.display = "inline";
-
+  document.getElementById("aviso-cupom").innerText =
+    "Cupom removido com sucesso!";
+  document.getElementById("aviso-cupom").style.color = "green";
   setTimeout(() => {
-    avisoCupom.style.display = "none";
+    document.getElementById("aviso-cupom").style.display = "none";
   }, 3000);
-
   atualizarTotal();
 }
 /* ATUALIZAR CARRINHO  */
@@ -242,46 +239,38 @@ function deletarItem(button) {
 /* FINALIZAR COMPRA */
 function finalizarCompra() {
   const mensagemFrete = document.getElementById("mensagem-frete");
-  const avisoCompraFinalizada = document.getElementById("aviso-compra-finalizada");
+  const avisoCompraFinalizada = document.getElementById(
+    "aviso-compra-finalizada"
+  );
   const totalCompra = document.getElementById("total-compra");
-
-  // Função para exibir mensagens com classe CSS
-  function exibirAviso(mensagem, tipo) {
-    avisoCompraFinalizada.classList.remove("mensagem-sucesso", "mensagem-erro");
-    avisoCompraFinalizada.innerText = mensagem;
-    avisoCompraFinalizada.style.display = "block";
-    if (tipo === "erro") {
-      avisoCompraFinalizada.classList.add("mensagem-erro");
-    } else if (tipo === "sucesso") {
-      avisoCompraFinalizada.classList.add("mensagem-sucesso");
-    }
-  }
 
   // Verificar se o carrinho está vazio
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   if (carrinho.length === 0) {
-    exibirAviso("Erro: o carrinho está vazio!", "erro");
+    avisoCompraFinalizada.innerText = "Erro: o carrinho está vazio!";
+    avisoCompraFinalizada.style.color = "red";
     return;
   }
-
   let login = JSON.parse(sessionStorage.getItem("usuarioLogado")) || [];
 
   const cepValido = consultarFrete();
   if (!cepValido) {
-    exibirAviso("Erro: informe um cep válido!", "erro");
+    avisoCompraFinalizada.innerHTML = "Erro: informe um cep válido!";
+    avisoCompraFinalizada.style.color = "red";
     return;
   }
-
   if (login.length <= 0) {
-    exibirAviso("Erro: você precisa fazer login para finalizar!", "erro");
+    avisoCompraFinalizada.innerText =
+      "Erro: vc precisa fazer login para finalizar!";
+    avisoCompraFinalizada.style.color = "red";
     setTimeout(() => {
       window.location.href = "login-page.html";
     }, 3000);
     return;
   }
 
-  // Compra finalizada com sucesso
-  exibirAviso("Compra Finalizada!", "sucesso");
+  avisoCompraFinalizada.innerHTML = "Compra Finalizada";
+  avisoCompraFinalizada.style.color = "green";
 }
 
 document
