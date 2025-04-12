@@ -181,3 +181,140 @@ body {
 .login-frame-container a:hover {
   text-decoration: underline;
 }
+
+/* RESPONSIVIDADE */
+
+/* 2K */
+@media screen and (min-width: 2560px) {
+  .login-frame-container {
+    width: 500px;
+    height: 600px;
+  }
+
+  .login-frame-section {
+    width: 500px;
+    height: 120px;
+  }
+
+  .login-frame-section span {
+    font-size: 32px;
+  }
+
+  .login-informations form label {
+    font-size: 22px;
+  }
+
+  .login-informations form input {
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .login-informations .buttonConfirm button {
+    padding: 10px 24px;
+    font-size: 18px;
+  }
+
+  .header-login {
+    background-color: #fce1b6;
+    padding: 25px 30px;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    overflow: hidden;
+  }
+
+  .logo-header {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center top;
+    margin-bottom: 15px;
+  }
+
+  .return-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .return-text {
+    font-size: 1.4rem;
+  }
+
+  .login-frame-container h5,
+  .login-frame-container a {
+    font-size: 18px;
+  }
+  
+  .login-frame-container h5 {
+    margin-bottom: 12px; 
+  }
+}
+
+/* 4K */
+@media screen and (min-width: 3840px) {
+  .login-frame-container {
+    width: 700px;
+    height: 750px;
+  }
+
+  .login-frame-section {
+    width: 700px;
+    height: 150px;
+  }
+
+  .login-frame-section span {
+    font-size: 44px;
+  }
+
+  .login-informations form label {
+    font-size: 28px;
+  }
+
+  .login-informations form input {
+    padding: 16px;
+    font-size: 24px;
+  }
+
+  .login-informations .buttonConfirm button {
+    padding: 14px 32px;
+    font-size: 24px;
+  }
+
+  .header-login {
+    background-color: #fce1b6;
+    padding: 35px 40px;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    overflow: hidden;
+  }
+
+  .logo-header {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center top;
+    margin-bottom: 20px;
+  }
+
+  .return-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .return-text {
+    font-size: 1.8rem;
+  }
+
+  .login-frame-container h5,
+  .login-frame-container a {
+    font-size: 22px;
+  }
+
+  .login-frame-container h5 {
+    margin-bottom: 12px; 
+  }
+
+}

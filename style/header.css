@@ -87,6 +87,59 @@ header {
 }
 
 /* RESPONSIVIDADE */
+
+/* 2K */
+@media screen and (min-width: 2560px) {
+  header {
+    height: 14em;
+    padding: 30px 60px;
+  }
+
+  .logo img {
+    width: 200px;
+    height: 200px;
+  }
+
+  #cart-icon {
+    width: 3em;
+  }
+
+  #login, #logout {
+    font-size: 24px;
+    padding: 15px 20px;
+  }
+
+  .menu ul {
+    gap: 30px;
+  }
+}
+
+/* 4K */
+@media screen and (min-width: 3840px) {
+  header {
+    height: 18em;
+    padding: 40px 80px;
+  }
+
+  .logo img {
+    width: 260px;
+    height: 260px;
+  }
+
+  #cart-icon {
+    width: 4em;
+  }
+
+  #login, #logout {
+    font-size: 30px;
+    padding: 20px 25px;
+  }
+
+  .menu ul {
+    gap: 40px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .logo {
     display: flex;
@@ -110,3 +163,4 @@ header {
     padding: 0%;
   }
 }
+
