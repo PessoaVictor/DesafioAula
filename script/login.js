@@ -24,7 +24,12 @@ document.getElementById("login").addEventListener("submit", function (event) {
                 
                 login.push(loginDados);
                 sessionStorage.setItem("usuarioLogado", JSON.stringify(login));
-                window.location.href = "index.html";
+                let paginaAnterior = document.referrer; 
+                if (paginaAnterior.includes("carrinho.html")) { 
+                    window.location.href = "carrinho.html";
+                } else {
+                    window.location.href = "index.html";
+                }
         }
        
     });
