@@ -184,6 +184,13 @@ body {
 
 /* RESPONSIVIDADE */
 
+/* Mobile */
+@media (max-height: 540px) {
+  body{
+    height: 590px;
+  }
+}
+
 /* 2K */
 @media screen and (min-width: 2560px) {
   .login-frame-container {
@@ -317,3 +324,4 @@ body {
     margin-bottom: 12px; 
   }
 
+}

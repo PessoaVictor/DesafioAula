@@ -182,6 +182,15 @@ body {
 
 /* RESPONSIVIDADE */
 
+
+/* Mobile */
+@media (max-height: 490px) {
+  body{
+    height: 550px;
+  }
+}
+
+
 /* 2K */
 @media screen and (min-width: 2560px) {
   .login-frame-container {
