@@ -37,7 +37,7 @@ let produtosNormal = document.querySelector("#produtosNormais");
 let ProdutosAlta = [
   { nome: "Desinfetante-e-bactericida", descricao: "lorem ipsum", preco: 70 },
   { nome: "Alimento-natural-para-coelho", descricao: "lorem ipsum", preco: 36 },
-  { nome: "Cama-preta-Zee", descricao: "lorem ipsum", preco: 540 },
+  { nome: "Cama-preta-zee", descricao: "lorem ipsum", preco: 540 },
   { nome: "Bebedouro", descricao: "lorem ipsum", preco: 75.2 },
   {
     nome: "Mordedor-galinha-para-cachorro",
