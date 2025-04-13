@@ -30,7 +30,6 @@ document.getElementById("login").addEventListener("submit", function (event) {
                 } else {
                     window.location.href = "index.html";
                 }
-
         }
        
     });
