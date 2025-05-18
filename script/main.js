@@ -130,3 +130,13 @@ produtosbtn.forEach((produto) => {
   });
 });
 //produtos fim
+
+const scrollButton = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollButton.classList.add('show');
+  } else {
+    scrollButton.classList.remove('show');
+  }
+});
