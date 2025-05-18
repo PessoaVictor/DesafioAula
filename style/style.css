@@ -2,3 +2,47 @@
 @import url(./header.css);
 @import url(./section-footer.css);
 @import url(./carrinho.css);
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(30px);
+  transition: all 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.circle {
+  background-color: #4caf50;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.circle:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.circle img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
